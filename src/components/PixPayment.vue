@@ -1,16 +1,14 @@
 <template>
-  <div class="q-pa-md">
-    <div class="column justify-center items-center content-center">
-      <div>
-        <img
-          src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=12191756760"
-          alt="QR Code"
-        />
-      </div>
-      <div class="text-center q-ma-md">Escaneie o QR Code para pagar</div>
-      <div>
-        <q-btn @click="copyToClipboard" label="Copiar código PIX" />
-      </div>
+  <div class="column justify-center items-center content-center">
+    <div>
+      <img
+        src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=12191756760"
+        alt="QR Code"
+      />
+    </div>
+    <div class="text-center q-ma-md">Escaneie o QR Code para pagar</div>
+    <div>
+      <q-btn @click="copyToClipboard" label="Copiar código PIX" />
     </div>
   </div>
 </template>

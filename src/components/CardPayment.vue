@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-center q-pa-md">
+  <div class="flex flex-center">
     <div v-if="loading" class="text-center">
       <div>Validando seu cartão...</div>
       <q-circular-progress
