@@ -144,7 +144,7 @@ const parcelasOptions = [
 
 watch(formData.value, async () => {
   if (form.value && Object.values(formData.value).every((value) => !!value)) {
-    const isValid = await form.value?.validate();
+    const isValid = await form.value?.validate(false);
     if (isValid) {
       emit('submit', [true, formData.value]);
       console.log('form is valid');

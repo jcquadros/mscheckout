@@ -35,7 +35,7 @@
       </q-step>
 
       <q-step :name="3" title="Pagamento" icon="paid" :done="step > 3">
-        <component :is="payment" />
+        <component :is="payment" :formulario="formulario" />
       </q-step>
 
       <q-step :name="4" title="Resumo da Compra" icon="shopping_cart">
