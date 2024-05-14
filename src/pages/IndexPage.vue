@@ -39,7 +39,7 @@
       </q-step>
 
       <q-step :name="4" title="Resumo da Compra" icon="shopping_cart">
-        <SummaryBuy></SummaryBuy>
+        <SummaryBuy :method="shape" />
       </q-step>
 
       <template v-slot:navigation>

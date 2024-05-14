@@ -60,12 +60,35 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import productsData from 'src/assets/products.json';
+import { PropType } from 'vue';
+import BoletoForm from 'src/components/BoletoForm.vue';
+import CreditCardForm from 'src/components/CreditCardForm.vue';
+import PixPayment from 'src/components/PixPayment.vue';
+
+const props = defineProps({
+  method: {
+    type: Object as PropType<
+      typeof BoletoForm | typeof CreditCardForm | typeof PixPayment
+    >,
+    required: true,
+  },
+});
+
+const paymentMethod = computed(() => {
+  if (props.method === BoletoForm) {
+    return 'boleto';
+  } else if (props.method === CreditCardForm) {
+    return 'cartão de crédito';
+  } else if (props.method === PixPayment) {
+    return 'pix';
+  }
+  return '';
+});
 
 const loading = ref(true);
 const products = ref(productsData.products);
 const purchaseDate = ref('May 13, 2024');
 const deliveryDate = ref('May 20, 2024');
-const paymentMethod = ref('Cartão de Crédito');
 const totalPrice = computed(() => {
   return products.value.reduce((acc, product) => acc + product.price, 0);
 });
